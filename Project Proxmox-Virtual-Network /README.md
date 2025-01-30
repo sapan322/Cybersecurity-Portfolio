@@ -4,13 +4,13 @@ Proxmox Virtual Network
 
 ## Description
 
-A brief description of what the project is about, its purpose, and what you aimed to achieve.
+This project created to learn how to use "Type 1" Hypervisor Proxmon with building corporate-like virtual network. Create DMZ, LAN and ADMIN zones with pfSense Firewall/Router.
 
 ## Objectives
 
-- **Objective 1:** [Description]
-- **Objective 2:** [Description]
-- **Objective 3:** [Description]
+- **Objective 1:** Install and configure Proxmon.    
+- **Objective 2:** Create VLANs for each zone.
+- **Objective 3:** In
 
 ## Technologies Used
 
