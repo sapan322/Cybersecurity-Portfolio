@@ -39,8 +39,7 @@ The project includes creating **DMZ, LAN, and ADMIN** zones using **pfSense** as
 
 
 ## Installation
-
-Step-by-step instructions for setting up the project, including prerequisites and commands.
+[Objective 1: Preparation](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_1)
 
 ## Challenges & Solutions
 
