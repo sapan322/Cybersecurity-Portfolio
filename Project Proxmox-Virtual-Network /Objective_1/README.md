@@ -12,13 +12,10 @@ Prepare or purchase necessary hardware and download required files and programs.
    ![#0](https://github.com/user-attachments/assets/ed018c28-bc52-4d85-8a0f-65b097dec455)  
 3. **Created a Bootable USB with Proxmox:**  
    - Used **Rufus** to write the ISO onto the flash drive.  
-   - Settings: **GPT / UEFI**, **ISO Mode** (if prompted).  
 
 ## **Issues & Troubleshooting**  
-✅ *No issues encountered; smooth process.*  
+*No issues encountered; smooth process.*  
 
 ## **Lessons Learned**  
 - The preparation phase is straightforward.  
 - Rufus provides an easy way to create bootable USB drives.  
-- It's better to use a **fast USB 3.0 flash drive** for quicker installation.  
-
