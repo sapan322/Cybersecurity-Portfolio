@@ -1,39 +1,24 @@
-# Objective 1: Preparation
+# **Objective 1: Preparation**
 
-## Description
-Prepare/buy hardware. Download files, programs.
+## **Description**  
+Prepare or purchase necessary hardware and download required files and programs.
 
-## Actions Taken
-1. Buy old laptop. Buy new flashdrive.
-2. Download Proxmox ISO Installer
+## **Actions Taken**
+1. **Acquired Hardware:**  
+   - Purchased an old laptop for virtualization testing.  
+   - Bought a new USB flash drive for installation.  
+2. **Downloaded Proxmox VE ISO Installer:**  
+   - Official download link: [Proxmox Downloads](https://www.proxmox.com/en/downloads)  
+   ![#0](https://github.com/user-attachments/assets/ed018c28-bc52-4d85-8a0f-65b097dec455)  
+3. **Created a Bootable USB with Proxmox:**  
+   - Used **Rufus** to write the ISO onto the flash drive.  
+   - Settings: **GPT / UEFI**, **ISO Mode** (if prompted).  
 
+## **Issues & Troubleshooting**  
+✅ *No issues encountered; smooth process.*  
 
+## **Lessons Learned**  
+- The preparation phase is straightforward.  
+- Rufus provides an easy way to create bootable USB drives.  
+- It's better to use a **fast USB 3.0 flash drive** for quicker installation.  
 
-   ```bash
-   # Пример команды
-   some-command --option value
-
-```
-
-1. [Дополнительные комментарии, если нужно.]
-
-## Screenshot
-
-*(Здесь добавьте реальный скриншот из процесса установки/настройки.)*
-
-## Issues & Troubleshooting
-
-### **Problem 1:** [Опишите возникшую проблему]
-
-- **Error Message:** `[Если есть ошибка, вставьте её сюда]`
-- **Solution:** [Как решили проблему? Какой командой или методом исправили?]
-
-### **Problem 2:** [Вторая возможная проблема]
-
-- **Error Message:** `[Ошибка]`
-- **Solution:** `[Как исправили?]`
-
-## Lessons Learned
-
-- [Что нового узнали на этом шаге? Какие выводы сделали?]
-- [Какие важные моменты нужно запомнить?]
