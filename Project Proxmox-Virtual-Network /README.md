@@ -51,9 +51,9 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
     - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-2-virtualization-support-not-enabled-error-message)
 
 ## Lessons Learned
-I learned how to properly install Proxmox and configure BIOS settings for virtualization support.
-It's important to check the boot mode (Legacy vs. UEFI) before installation.
-I gained hands-on experience in configuring network interfaces in Proxmox VE, especially regarding VLANs and network bridges.
+- I learned how to properly install Proxmox and configure BIOS settings for virtualization support.
+- It's important to check the boot mode (Legacy vs. UEFI) before installation.
+- I gained hands-on experience in configuring network interfaces in Proxmox VE, especially regarding VLANs and network bridges.
 
 
 ## Future Improvements
