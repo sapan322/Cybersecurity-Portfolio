@@ -8,9 +8,9 @@ This project created to learn how to use "Type 1" Hypervisor Proxmon with buildi
 
 ## Objectives
 
-- **Objective 1:** Install and configure Proxmon.    
-- **Objective 2:** Create VLANs for each zone.
-- **Objective 3:** In
+- **Objective 1:** Install Proxmon VE.    
+- **Objective 2:**  
+- **Objective 3:** Create VLANs for each zone.
 
 ## Technologies Used
 
