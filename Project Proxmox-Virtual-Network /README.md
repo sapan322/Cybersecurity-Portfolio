@@ -3,6 +3,7 @@
 ## **Description**
 This project is designed to learn how to use the **"Type 1" Hypervisor Proxmox VE** by building a **corporate-like virtual network**.  
 The project includes creating **DMZ, LAN, and ADMIN** zones using **pfSense** as a firewall and router.
+The goal is to simulate a realistic IT infrastructure, enabling secure communication and network segmentation.
 
 ![#0 1](https://github.com/user-attachments/assets/aa3bc070-f3a0-4e48-83a3-17f38b9c4880)
 
@@ -44,19 +45,20 @@ The project includes creating **DMZ, LAN, and ADMIN** zones using **pfSense** as
 [Objective 2: Proxmox VE Installation](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2)
 ## Challenges & Solutions
 
-- **Challenge 1:** [Describe the problem]
-    - **Solution:** [Explain how you solved it]
-- **Challenge 2:** [Describe the problem]
-    - **Solution:** [Explain how you solved it]
+- **Challenge 1:** Proxmox doesn’t boot after installation (only "Rescue Boot" from USB works).
+    - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-1-proxmox-doesnt-boot-after-installation-only-rescue-boot-from-usb-works)
+- **Challenge 2:** "Virtualization support not enabled" error message.
+    - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-2-virtualization-support-not-enabled-error-message)
 
 ## Lessons Learned
+I learned how to properly install Proxmox and configure BIOS settings for virtualization support.
+It's important to check the boot mode (Legacy vs. UEFI) before installation.
+I gained hands-on experience in configuring network interfaces in Proxmox VE, especially regarding VLANs and network bridges.
 
-A reflection on what you learned during the project, including new skills, tools, or concepts.
 
 ## Future Improvements
 
 Suggestions or ideas for improving the project in the future.
 
 ## Acknowledgements
-
-Credits to resources, libraries, or tutorials that helped you complete the project.
+Special thanks to ChatGPT dev team, NetworkChuck
