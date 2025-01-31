@@ -43,6 +43,9 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 [Objective 1: Preparation](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_1)
 
 [Objective 2: Proxmox VE Installation](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2)
+
+[Objective 3: Initial Configuration of Proxmox VE](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_3%20)
+
 ## Challenges & Solutions
 
 - **Challenge 1:** Proxmox doesn’t boot after installation (only "Rescue Boot" from USB works).
@@ -50,10 +53,14 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 - **Challenge 2:** "Virtualization support not enabled" error message.
     - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-2-virtualization-support-not-enabled-error-message)
 
+
 ## Lessons Learned
 - I learned how to properly install Proxmox and configure BIOS settings for virtualization support.
 - It's important to check the boot mode (Legacy vs. UEFI) before installation.
 - I gained hands-on experience in configuring network interfaces in Proxmox VE, especially regarding VLANs and network bridges.
+- How to remove local-lvm storage, resize local storage, and change storage rules.
+- How to configure Proxmox remotely from a browser and access the Proxmox terminal.
+- Proxmox interface usage.
 
 
 ## Future Improvements
