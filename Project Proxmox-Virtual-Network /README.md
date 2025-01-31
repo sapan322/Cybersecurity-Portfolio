@@ -52,6 +52,23 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
     - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-1-proxmox-doesnt-boot-after-installation-only-rescue-boot-from-usb-works)
 - **Challenge 2:** "Virtualization support not enabled" error message.
     - [**Solution:**](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_2#problem-2-virtualization-support-not-enabled-error-message)
+- **Challenge 3:** "Proxmox VE shuts down when the laptop lid is closed."  
+    - **Solution:** Modify system settings to prevent the system from suspending when the lid is closed.  
+      1. Open the Proxmox shell.  
+      2. Edit the **login.conf** file using nano:  
+         ```
+         nano /etc/systemd/logind.conf
+         ```
+      3. Find the following lines, remove the `#` at the beginning, and update them as follows:  
+         ```
+         HandleLidSwitch=ignore
+         HandleLidSwitchDocked=ignore
+         ```
+      4. Save the file (`CTRL + X`, then `Y`, and `Enter`).  
+      5. Restart the logind service to apply changes:  
+         ```
+         systemctl restart systemd-logind.service
+         ```  
 
 
 ## Lessons Learned
