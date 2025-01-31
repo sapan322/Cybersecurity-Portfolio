@@ -1,36 +1,18 @@
-# **Objective 4: VLANs and pfSense**
+# **Objective 4: VLANs and pfSense** David McKone https://www.youtube.com/watch?v=ljq6wlzn4qo 
 
 ## Description
 
 
+
+
 ## Actions Taken
-1. I need to know what interface Proxmox use for physical connection to my router, so i use "ip a" command in shell.
-   ![IP A](https://github.com/user-attachments/assets/3df44640-1bea-4b96-8f84-66a69f7abd1b)
+1. Proxmox use physical interface called "enp0s25" and bridge to it called "vmbr0"
+      ![Network understanding](https://github.com/user-attachments/assets/7779f008-2e03-42c0-9430-01ef17071e2a)
 
-  lo — loopback interface.
-  
-  enp0s25 — physical Ethernet interface.
-  
-  wlo1 — Wi-Fi interface.
-  
-  vmbr0 — virtual bridge what connect VM to physical interface
-  
 
-  #### So enp0s25 is interface that i need.
+2. Make a backup "Network Interfaces Configuration" file  
 
-2. Open network configuration file "nano /etc/network/interfaces"
-
-    ![net config](https://github.com/user-attachments/assets/cfc280bf-fb43-4309-bba4-003ea6ee9506)
-   
-   auto vmbr0 - bridge will start on system startup
-   iface vmbr0 inet static 
-        address 192.168.8.111/24
-        gateway 192.168.8.1
-        bridge-ports enp0s25 - physical interface that will be conected to bridge
-        bridge-stp off
-        bridge-fd 0
-
-   Everything configured right in default configuration.  
+      ![2025-01-31 22_18_40-proxmox - Proxmox Virtual Environment](https://github.com/user-attachments/assets/353a79dd-948b-470b-b98d-6d2ff643f3ac)
 
 3. DMZ zone will be "VLAN 30", LAN - "VLAN 20", ADMIN - "VLAN 10".
    ![VLAN scheme drawio - draw io](https://github.com/user-attachments/assets/bea93cfc-c317-4faa-b650-ef7f97e7f37a)
