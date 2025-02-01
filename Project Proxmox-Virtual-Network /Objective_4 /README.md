@@ -1,79 +1,67 @@
-# **Objective 4: VLANs and pfSense** David McKone https://www.youtube.com/watch?v=ljq6wlzn4qo 
+# **Objective 4: VLANs and pfSense**
 
 ## Description
-
-
-
+This objective focuses on configuring VLANs for different network zones and integrating them with Proxmox using network bridges. The VLAN IDs were assigned for DMZ (VLAN 30), LAN (VLAN 20), and ADMIN (VLAN 10). After understanding how interfaces relate to each other in Proxmox, I successfully created the necessary subinterfaces and bridges. The configuration was initially broken and restored for a better understanding.
 
 ## Actions Taken
-1. Proxmox use physical interface called "enp0s25" and bridge to it called "vmbr0"
-      ![Network understanding](https://github.com/user-attachments/assets/7779f008-2e03-42c0-9430-01ef17071e2a)
 
+1. **Decided on VLAN IDs for each zone:**  
+   - DMZ zone = "VLAN 30"  
+   - LAN = "VLAN 20"  
+   - ADMIN = "VLAN 10"  
+   ![VLAN scheme](https://github.com/user-attachments/assets/bea93cfc-c317-4faa-b650-ef7f97e7f37a)
 
-2. Make a backup "Network Interfaces Configuration" file  
+2. **Identified Proxmox physical interface and bridge:**  
+   - Proxmox uses the physical interface "enp0s25" and a bridge called "vmbr0."  
+   ![Network understanding](https://github.com/user-attachments/assets/7779f008-2e03-42c0-9430-01ef17071e2a)
 
-      ![2025-01-31 22_18_40-proxmox - Proxmox Virtual Environment](https://github.com/user-attachments/assets/353a79dd-948b-470b-b98d-6d2ff643f3ac)
+3. **Opened the network configuration file**:  
+   I accessed the default configuration file after the Proxmox installation using:  
+   `nano /etc/network/interfaces`  
+   ![Network configuration](https://github.com/user-attachments/assets/1a0118c3-7aa7-4bd9-b1c5-53032825dbae)
 
-3. DMZ zone will be "VLAN 30", LAN - "VLAN 20", ADMIN - "VLAN 10".
-   ![VLAN scheme drawio - draw io](https://github.com/user-attachments/assets/bea93cfc-c317-4faa-b650-ef7f97e7f37a)
-
-   Create interface for each VLAN in "/etc/network/interfaces" file what will use physical interface "enp0s25" for packets tag.
-
-   auto vlan10
-   iface vlan10 inet manual
-       vlan_raw_device enp0s25
-
-   ![vlan config](https://github.com/user-attachments/assets/1818cdd8-7495-413c-853b-0303ffde0942)
-
-   Create bridges for each VLAN that we created for VM connection. IP address and gateway not neede, because we will use pfSense for routing.
+4. **Created subinterfaces for each VLAN**:  
+   In the `/etc/network/interfaces` file, I added subinterfaces for each VLAN (10, 20, 30) to use "enp0s25" as the raw device for tagging VLAN packets:
    
-   auto vmbr0.10
-    iface vmbr0.10 inet manual
-    bridge_ports enp0s25.10
-    bridge_stp off
-    bridge_fd 0
+      auto enp0s25.10
+      iface enp0s25.10 inet manual
+      vlan-raw-device enp0s25
+   
+   ![Subinterfaces](https://github.com/user-attachments/assets/4bc3dca6-72ea-4fd5-a6ad-1fc1944c9ff9)
 
-   ![bridges](https://github.com/user-attachments/assets/7165713f-439e-48b4-b10f-00c3ba5675ba)
+6. **Created bridges for each subinterface**:  
+I created bridges for each subinterface. No IP address or gateway was required because pfSense would handle routing:  
 
+      auto vmbr10
+      iface vmbr10 inet manual
+      bridge-ports enp0s25.10
+      bridge-stp off
+      bridge-fd 0
 
+   ![Bridges](https://github.com/user-attachments/assets/d688cb8f-f6ea-4c0e-93df-f7b8d40b05c5)
 
+6. **Saved and closed the configuration file**:  
+After saving the changes (CTRL + S), I restarted the network service with:  
+`systemctl restart networking`  
+If the connection to Proxmox was restored within a few seconds, the configuration was successful (see [Problem 1](https://github.com/sapan322/Cybersecurity-Portfolio/edit/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20/README.md#problem-1-i-make-couple-errors-on-first-configuration-try-so-after-restart-services---i-cant-connect-to-vmbr0-ip-address-from-my-machine-for-remote-configuration))  
 
+![Proxmox environment](https://github.com/user-attachments/assets/8fa6d1f7-50f3-4bd1-a324-848f5fbf37d5)
 
-5. Selected **"Install Proxmox VE (Graphical)"**.  
-   ![#2](https://github.com/user-attachments/assets/d5b0b579-2228-4609-b5f1-a069f4baa729)  
-
-6. Set up **administration password** and **email**.  
-   ![#3](https://github.com/user-attachments/assets/e8ab1cb2-89e1-4c2b-811f-2679ef648e68)  
-
-7. Selected **management interface** (Ethernet), **hostname** (device name in the network), **IP address** (assigned by the DHCP server on the physical router), **Gateway** (router's IP address), and **DNS Server** (Google DNS can be used).  
-   ![#5](https://github.com/user-attachments/assets/07e30c4f-bfc2-4a7c-a03b-747e910f68b8)  
-
-8. Reviewed the **summary screen** and confirmed the installation.  
-   ![#6](https://github.com/user-attachments/assets/0a62479a-7b92-436e-88b3-663e03a1ad01)  
-
-9. After installation, **removed the USB drive** and waited for Proxmox to boot. Once booted, the system displayed the **IP address** for remote configuration.  
-   ![#7](https://github.com/user-attachments/assets/2cf25042-ea4c-4578-bb39-2fdf7edefa29)  
-
----
+7. **Checked the new interfaces**:  
+I ran the command `ip a` to verify that the subinterfaces and bridges were created successfully. The output should show `enp0s25.10`, `enp0s25.20`, `enp0s25.30` and the bridges `vmbr10`, `vmbr20`, `vmbr30`.  
+![IP addresses](https://github.com/user-attachments/assets/d787aecd-2496-4d37-999c-2eb90e3e3ebc)
 
 ## **Issues & Troubleshooting**
 
-### **Problem 1:** Proxmox doesn’t boot after installation (only "Rescue Boot" from USB works).  
-- **Error Message:** *Boot device not found.*  
-- **Solution:** Changed BIOS boot mode from **Legacy** to **UEFI Hybrid**, then reinstalled Proxmox to avoid future issues.  
-  ![Fix #2](https://github.com/user-attachments/assets/5ba32817-d1dd-4455-b87b-b9ee051c3319)  
-
-### **Problem 2:** *"Virtualization support not enabled"* error message.  
-- **Error Message:** `No support for hardware-accelerated KVM virtualization detected`  
-  ![Problem #1](https://github.com/user-attachments/assets/068dc661-093c-4d57-93e4-ebbb0cd8dbcd)  
-- **Solution:** Enabled **"Virtualization Technology (VT-x)"** in BIOS settings.  
+### **Problem 1:**  
+On the first configuration attempt, I made a couple of errors, causing the inability to reconnect to the `vmbr0` IP address after restarting network services.  
+- **Solution:**  
+I accessed the server directly, manually restored the configuration to the default settings, and was able to reconnect remotely.
 
 ---
 
 ## **Lessons Learned**
-- BIOS settings **must** be checked before installing a hypervisor.  
-- Boot mode **must** be set to **UEFI Hybrid** (not Legacy).  
-- Proxmox requires **correctly assigned network interfaces** for configuration.  
-
-  
-
+- Understanding Proxmox interface relationships and how to configure them.
+- Creating subinterfaces and bridges to handle VLANs.
+- Manual configuration of Proxmox networking.
+- How the physical interface (`enp0s25`) and the bridge (`vmbr0`) interact to enable VLAN tagging and network separation.
