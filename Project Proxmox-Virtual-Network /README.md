@@ -46,7 +46,7 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 
 [Objective 3: Initial Configuration of Proxmox VE](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_3%20)
 
-[Objective 4: VLANs and pfSense](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20)
+[Objective 4.1: VLANs](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_4.1)
 
 ## Challenges & Solutions
 
