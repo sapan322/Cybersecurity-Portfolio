@@ -46,6 +46,8 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 
 [Objective 3: Initial Configuration of Proxmox VE](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_3%20)
 
+[Objective 4: VLANs and pfSense](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20)
+
 ## Challenges & Solutions
 
 - **Challenge 1:** Proxmox doesn’t boot after installation (only "Rescue Boot" from USB works).
@@ -68,7 +70,9 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
       5. Restart the logind service to apply changes:  
          ```
          systemctl restart systemd-logind.service
-         ```  
+         ```
+- **Challenge 4:** ["Network configuration with errors, causing the inability to reconnect to the vmbr0"](https://github.com/sapan322/Cybersecurity-Portfolio/tree/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20#problem-1)  
+    - **Solution:** I accessed the server directly, manually restored the configuration to the default settings, and was able to reconnect remotely.
 
 
 ## Lessons Learned
@@ -78,6 +82,10 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 - How to remove local-lvm storage, resize local storage, and change storage rules.
 - How to configure Proxmox remotely from a browser and access the Proxmox terminal.
 - Proxmox interface usage.
+- Understanding Proxmox interface relationships and how to configure them.
+- Creating subinterfaces and bridges to handle VLANs.
+- Manual configuration of Proxmox networking.
+- How the physical interface (enp0s25) and the bridge (vmbr0) interact to enable VLAN tagging and network separation.
 
 
 ## Future Improvements
@@ -85,4 +93,8 @@ The goal is to simulate a realistic IT infrastructure, enabling secure communica
 Suggestions or ideas for improving the project in the future.
 
 ## Acknowledgements
-Special thanks to ChatGPT dev team, NetworkChuck
+Special thanks to: 
+
+**ChatGPT dev team**
+
+**NetworkChuck**
