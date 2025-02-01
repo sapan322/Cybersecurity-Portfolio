@@ -1,4 +1,4 @@
-# **Objective 4: VLANs and pfSense**
+# **Objective 4.1: VLANs**
 
 ## Description
 This objective focuses on configuring VLANs for different network zones and integrating them with Proxmox using network bridges. The VLAN IDs were assigned for DMZ (VLAN 30), LAN (VLAN 20), and ADMIN (VLAN 10). After understanding how interfaces relate to each other in Proxmox, I successfully created the necessary subinterfaces and bridges. The configuration was initially broken and restored for a better understanding.
