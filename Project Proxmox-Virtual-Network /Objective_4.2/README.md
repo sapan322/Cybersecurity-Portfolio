@@ -32,13 +32,14 @@ Add 3 additional "Network Device" with random generated MAC address
 
     ![Install](https://github.com/user-attachments/assets/62d19912-5b10-40ab-965c-726191aee378)
 
+4. Select WAN-interface (vmbr0)
 
+      ![Select interface](https://github.com/user-attachments/assets/124d7f1d-18df-4807-a389-209227b0a4c1)
 
+5. Network mode setup. DHCP enbled because my router have DHCP. 
 
+      ![2025-02-01 14_35_41-proxmox - Proxmox Virtual Environment](https://github.com/user-attachments/assets/f724fa3a-1b0c-477b-977f-4beba37c7048)
 
-4. 
-
-5.
 
 6. 
 
