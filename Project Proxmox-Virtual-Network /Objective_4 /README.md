@@ -43,7 +43,7 @@ I created bridges for each subinterface. No IP address or gateway was required b
 6. **Saved and closed the configuration file**:  
 After saving the changes (CTRL + S), I restarted the network service with:  
 `systemctl restart networking`  
-If the connection to Proxmox was restored within a few seconds, the configuration was successful (see [Problem 1](https://github.com/sapan322/Cybersecurity-Portfolio/edit/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20/README.md#problem-1-i-make-couple-errors-on-first-configuration-try-so-after-restart-services---i-cant-connect-to-vmbr0-ip-address-from-my-machine-for-remote-configuration))  
+If the connection to Proxmox was restored within a few seconds, the configuration was successful (see [Problem 1](https://github.com/sapan322/Cybersecurity-Portfolio/blob/main/Project%20Proxmox-Virtual-Network%20/Objective_4%20/README.md#problem-1))  
 
 ![Proxmox environment](https://github.com/user-attachments/assets/8fa6d1f7-50f3-4bd1-a324-848f5fbf37d5)
 
