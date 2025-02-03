@@ -69,7 +69,7 @@ Add 3 additional "Network Device" with random generated MAC address
 
       ![2025-02-02 19_47_17-proxmox - Proxmox Virtual Environment](https://github.com/user-attachments/assets/00f5c8fa-a307-4fe2-942f-5442e574185d)
 
-12. VLANS configuration need to be finished - so enter to shell and temporary enable pfSense web GUI access from the WAN by command that will disable firewall "pfctl -d"
+12. VLANS configuration need to be finished - open up pfSense shell and [temporary enable pfSense web GUI access](https://github.com/sapan322/Cybersecurity-Portfolio/blob/main/Project%20Proxmox-Virtual-Network%20/Objective_4.2/README.md#problem-1) from the WAN by command that will disable firewall "pfctl -d"
 
       ![2025-02-02 20_00_06-proxmox - Proxmox Virtual Environment](https://github.com/user-attachments/assets/d2a5ad9e-c782-4f12-89e4-63a1f587bb65)
 
