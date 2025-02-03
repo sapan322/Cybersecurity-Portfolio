@@ -12,7 +12,7 @@
 - Sender: plaintext -> recipient *public* key -> ciphertext
 - Recipient: ciphertext -> recipient *private* key  -> plaintext
  
-***Hashing**
+***Hashing***
 A cryptographic hash function is an algorithm that takes data as input and returns message digest or checksum, as its output. 
 
   
