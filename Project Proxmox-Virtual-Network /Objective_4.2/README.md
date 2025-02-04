@@ -102,6 +102,12 @@ Add 3 additional "Network Device" with random generated MAC address
    - LAN (vmbr20): 192.168.20.100 - 192.168.20.150
    - DMZ (vmbr30): 192.168.30.100 - 192.168.30.150
 
+17. Next step - firewall configuration.
+
+    - ADMIN_ZONE - as default
+      ![2025-02-04 19_23_42-pfSense pfsense home arpa - Firewall_ Rules_ ADMIN_ZONE](https://github.com/user-attachments/assets/e8d4a6fd-ab8a-4870-832c-127f9761616f)
+    - 
+
 
 
 
