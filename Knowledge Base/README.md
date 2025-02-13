@@ -1,3 +1,0 @@
-# **Knowledge Base**  
-
-This is my knowledge base for cybersecurity and IT concepts that I have learned and understood from various sources such as TryHackMe, CompTIA Security+ objectives, and others. It also includes completed challenges that demonstrate my practical understanding.
